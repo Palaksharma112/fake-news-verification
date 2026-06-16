@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+<title>
+History
+</title>
+
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='style.css') }}">
+
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+
+<h2>
+Fake News Verification
+</h2>
+
+
+<div>
+
+
+<a href="/dashboard">
+Dashboard
+</a>
+
+
+<a href="/logout">
+Logout
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="container">
+
+
+<h2>
+News History
+</h2>
+
+
+
+<table>
+
+
+<tr>
+
+<th>
+News
+</th>
+
+
+<th>
+Result
+</th>
+
+
+<th>
+Confidence
+</th>
+
+
+<th>
+Date
+</th>
+
+
+</tr>
+
+
+
+{% for item in history %}
+
+
+<tr>
+
+
+<td>
+{{ item[0] }}
+</td>
+
+
+<td>
+{{ item[1] }}
+</td>
+
+
+<td>
+{{ item[2] }} %
+</td>
+
+
+<td>
+{{ item[3] }}
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</table>
+
+
+</div>
+
+
+</body>
+
+
+</html>
